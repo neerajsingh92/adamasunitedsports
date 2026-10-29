@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adamas Cricket Academy — Best Cricket Academy in Kolkata</title>
+<meta name="description" content="Adamas Cricket Academy — Elite cricket coaching, world-class grounds, CAB pathway, academic integration. Kolkata's premier cricket academy under Saurashish Lahiri.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#111;overflow-x:hidden;background:#fff}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+
+:root{
+  --orange:#f57c1f;
+  --orange2:#d96b10;
+  --navy:#1a2456;
+  --navy2:#111a3e;
+  --navy3:#0e1530;
+  --red:#c0392b;
+  --green:#1d6a3a;
+  --border:#e0e0e8;
+  --off:#f4f4f6;
+  --text:#1a1a2e;
+  --muted:#6b6b80;
+}
+
+/* ── FIXED ENQUIRE BUTTON ───────── */
+.fixed-enquire{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:500;writing-mode:vertical-rl;text-orientation:mixed;background:var(--orange);color:#fff;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:18px 10px;cursor:pointer;border:none;font-family:'Inter',sans-serif;border-radius:4px 0 0 4px;transition:.2s}
+.fixed-enquire:hover{background:var(--orange2)}
+
+/* ── TOP BAR ────────────────────── */
+.topbar{background:var(--navy);padding:10px 20px;text-align:center;font-size:12.5px;font-weight:500;color:#fff;letter-spacing:.2px}
+.topbar strong{color:var(--orange)}
+
+/* ── NAV ────────────────────────── */
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:300}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:0}
+.logo img{height:52px;width:auto;object-fit:contain}
+.nav-title{font-size:14px;font-weight:700;color:var(--navy);letter-spacing:.2px}
+
+/* ── HERO ───────────────────────── */
+.hero{background:linear-gradient(135deg,var(--navy3) 0%,var(--navy) 60%,#1d2e70 100%);min-height:520px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="30" fill="rgba(255,255,255,0.02)"/><circle cx="80" cy="80" r="40" fill="rgba(255,255,255,0.02)"/></svg>') center/cover}
+.hero-inner{max-width:1140px;margin:0 auto;padding:60px 24px;display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:center;width:100%;position:relative;z-index:1}
+.hero-left{}
+.hero-tag{display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:3px;margin-bottom:20px;letter-spacing:.5px;text-transform:uppercase}
+.hero h1{font-size:clamp(28px,4.5vw,50px);font-weight:900;color:#fff;line-height:1.1;text-transform:uppercase;letter-spacing:-0.5px;margin-bottom:16px}
+.hero h1 span{color:var(--orange)}
+.hero-cta-pill{display:inline-block;border:2px solid var(--orange);color:var(--orange);border-radius:30px;padding:9px 26px;font-size:14px;font-weight:700;margin-bottom:22px;cursor:pointer;transition:.2s}
+.hero-cta-pill:hover{background:var(--orange);color:#fff}
+.hero-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.75;max-width:460px;margin-bottom:20px}
+.hero-facts{background:rgba(26,36,86,.8);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:14px 18px;font-size:13px;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:16px}
+.hero-facts strong{color:var(--orange)}
+.hero-urgency{font-size:13px;font-weight:700;color:var(--orange);letter-spacing:.3px}
+.hero-form{background:#fff;border-radius:8px;padding:28px 24px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.hero-form h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:20px;text-align:center;border-bottom:2px solid var(--orange);padding-bottom:12px}
+.hf-field{margin-bottom:12px}
+.hf-field input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:5px;font-size:14px;font-family:'Inter',sans-serif;color:var(--text);outline:none;transition:.15s}
+.hf-field input:focus{border-color:var(--orange)}
+.hf-field input::placeholder{color:#aaa}
+.hf-submit{width:100%;padding:13px;background:var(--orange);color:#fff;font-size:15px;font-weight:700;border:none;border-radius:5px;cursor:pointer;font-family:'Inter',sans-serif;transition:.2s;margin-top:4px}
+.hf-submit:hover{background:var(--orange2)}
+.hf-note{font-size:11px;color:#999;text-align:center;margin-top:10px;line-height:1.5}
+
+/* ── STATS ──────────────────────── */
+.stats{background:#fff;border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:28px 20px;text-align:center;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-size:40px;font-weight:900;color:var(--navy);line-height:1}
+.stat-l{font-size:12px;color:var(--muted);margin-top:6px;font-weight:500}
+
+/* ── SECTION COMMONS ─────────────── */
+.section{padding:80px 0}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.sec-head{text-align:center;margin-bottom:52px}
+.eyebrow{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--orange);margin-bottom:10px}
+h2.title{font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--navy);margin-bottom:12px;line-height:1.25}
+h2.title.wh{color:#fff}
+.sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:580px;margin:0 auto}
+.hr-div{border:none;border-top:2px solid var(--navy);width:60px;display:block;margin:12px auto 0}
+.btn-or{display:inline-block;background:var(--orange);color:#fff;font-size:14px;font-weight:700;padding:12px 32px;border-radius:5px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:.2s}
+.btn-or:hover{background:var(--orange2)}
+.btn-nv{display:inline-block;background:var(--navy);color:#fff;font-size:14px;font-weight:700;padding:12px 32px;border-radius:5px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:.2s}
+.btn-nv:hover{background:var(--navy2)}
+
+/* ── TIMELINE ───────────────────── */
+.tl-section{background:var(--navy);position:relative;overflow:hidden}
+.tl-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,30,.95) 0%,rgba(17,26,62,.9) 100%)}
+.tl-content{position:relative;z-index:1}
+.tl-track{max-width:700px;margin:0 auto;position:relative}
+.tl-track::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(255,255,255,.2);transform:translateX(-50%)}
+.tl-item{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:44px;position:relative}
+.tl-item::after{content:'';position:absolute;left:50%;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--orange);transform:translateX(-50%)}
+.tl-left{text-align:right;padding-right:36px}
+.tl-right{padding-left:36px}
+.tl-time{font-size:18px;font-weight:800;color:var(--orange);line-height:1}
+.tl-head{font-size:15px;font-weight:700;color:#fff;margin:4px 0}
+.tl-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}
+.tl-item:nth-child(even) .tl-left{padding-right:36px}
+.tl-item:nth-child(even) .tl-right{padding-left:36px}
+.tl-cta{text-align:center;margin-top:40px;color:var(--orange);font-size:14px;font-weight:700;letter-spacing:.3px}
+.tl-cta a{color:var(--orange);border-bottom:1px solid var(--orange)}
+
+/* ── PROB/SOL ───────────────────── */
+.ps-section{background:var(--off)}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:24px}
+.ps-bad{background:#fff;border-radius:8px;padding:30px;border-left:4px solid var(--red)}
+.ps-bad h3{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:20px}
+.ps-bad li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#444;padding:8px 0;border-bottom:1px solid #f0f0f0;line-height:1.5}
+.ps-bad li:last-child{border-bottom:none}
+.ps-bad .x{color:var(--red);font-size:16px;flex-shrink:0;margin-top:1px}
+.ps-good{background:var(--navy);border-radius:8px;padding:30px}
+.ps-good h3{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:var(--orange);margin-bottom:20px}
+.ps-good li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.8);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);line-height:1.5}
+.ps-good li:last-child{border-bottom:none}
+.ps-good .ck{color:var(--orange);font-size:16px;flex-shrink:0;margin-top:1px}
+.ps-strip{background:var(--orange);border-radius:8px;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ps-strip p{font-size:14px;font-weight:700;color:#fff}
+.ps-strip a{background:#fff;color:var(--orange);font-size:13px;font-weight:800;padding:9px 22px;border-radius:5px;white-space:nowrap}
+.ps-strip a:hover{background:var(--navy);color:#fff}
+
+/* ── 6 REASONS ──────────────────── */
+.reasons{background:#fff}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat-card{background:var(--off);border-radius:10px;padding:24px;border:1px solid var(--border);transition:.2s}
+.feat-card:hover{border-color:var(--orange);box-shadow:0 4px 18px rgba(245,124,31,.1)}
+.feat-icon{width:50px;height:50px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.feat-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* ── COACHES ────────────────────── */
+.coaches{background:var(--off)}
+.coach-main{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-bottom:40px}
+.coach-video-wrap{border-radius:10px;overflow:hidden;background:var(--navy3);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.coach-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.coach-play{width:60px;height:60px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;z-index:1;flex-shrink:0}
+.coach-info .coach-name{font-size:20px;font-weight:900;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.coach-info .coach-role{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.coach-info p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:12px}
+.coaches-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.coach-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center}
+.coach-avi{width:56px;height:56px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 12px}
+.coach-cn{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.coach-cr{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.coach-cd{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* ── TESTIMONIALS ───────────────── */
+.testi-section{background:#fff}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.testi{background:var(--off);border-radius:10px;padding:24px;border:1px solid var(--border)}
+.testi-qm{font-size:52px;color:var(--orange);line-height:.8;margin-bottom:8px;font-family:Georgia,serif;opacity:.4}
+.testi p{font-size:14px;color:#333;line-height:1.75;margin-bottom:18px}
+.testi-foot{border-top:1px solid var(--border);padding-top:14px;display:flex;align-items:center;gap:10px}
+.testi-avi{width:36px;height:36px;border-radius:50%;background:var(--navy);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px}
+.testi-name{font-size:13px;font-weight:700;color:var(--navy)}
+.testi-badge{display:inline-block;background:var(--navy);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;margin-right:6px}
+.testi-meta{font-size:11px;color:var(--muted)}
+
+/* ── FEES ───────────────────────── */
+.fees-section{background:linear-gradient(135deg,#1b3a4b 0%,#0d2233 50%,#0a1a2e 100%);padding:80px 0}
+.fee-card{background:#fff;border-radius:12px;padding:36px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;max-width:840px;margin:0 auto}
+.fee-left .fee-h{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:16px}
+.fee-left .fee-h span{color:var(--orange)}
+.fee-items{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.fee-items li{font-size:13.5px;color:#333;display:flex;align-items:flex-start;gap:9px}
+.fee-items .ck{color:var(--orange);font-size:14px;flex-shrink:0;margin-top:2px}
+.fee-admission{font-size:13px;font-weight:700;color:var(--navy);padding-top:14px;border-top:1px solid #eee}
+.fee-right h3{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.fee-right .fi{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.65}
+.sch-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);margin-bottom:8px}
+.sch-list{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.sch-list li{font-size:13px;color:#333;display:flex;align-items:flex-start;gap:8px}
+.sch-list .ck{color:var(--orange);flex-shrink:0;font-size:13px;margin-top:2px}
+.fee-actions{text-align:center;margin-top:28px}
+
+/* ── FAQ ────────────────────────── */
+.faq-section{background:var(--off)}
+.faq{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq-item{background:#fff;border-radius:7px;border:1px solid var(--border);overflow:hidden}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:#fff;font-size:14.5px;font-weight:600;color:var(--navy);cursor:pointer;text-align:left;border:none;font-family:'Inter',sans-serif;line-height:1.4;gap:12px}
+.faq-q:hover{background:#fafafa}
+.faq-item.open .faq-q{color:var(--orange);background:#fffaf5}
+.faq-ico{font-size:18px;color:var(--muted);flex-shrink:0;transition:.25s}
+.faq-item.open .faq-ico{color:var(--orange);transform:rotate(180deg)}
+.faq-a{display:none;padding:0 22px 18px;font-size:14px;color:var(--muted);line-height:1.75}
+.faq-item.open .faq-a{display:block}
+
+/* ── FOOTER ─────────────────────── */
+.footer{background:#0a0d1a;padding:22px 24px;text-align:center}
+.footer p{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:6px}
+.footer-links{display:flex;justify-content:center;gap:4px;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.4);transition:.15s}
+.footer-links a:hover{color:var(--orange)}
+.footer-links span{color:rgba(255,255,255,.2)}
+
+/* ── SCROLL TOP ─────────────────── */
+.go-top{position:fixed;bottom:22px;right:60px;width:38px;height:38px;background:#fff;border:1px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:.25s;z-index:400;font-size:16px;color:var(--navy);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.go-top.on{opacity:1}
+
+/* ── RESPONSIVE ─────────────────── */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:28px}
+  .hero-form{max-width:440px}
+  .feat-grid,.testi-grid,.coaches-mini{grid-template-columns:repeat(2,1fr)}
+  .ps-grid,.coach-main,.fee-card{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid var(--border)}
+  .stat:nth-child(odd){border-right:1px solid var(--border)}
+  .stat:nth-child(even){border-right:none}
+  .tl-track::before{left:24px}
+  .tl-item{grid-template-columns:1fr;padding-left:52px}
+  .tl-item .tl-left{text-align:left;padding-right:0;margin-bottom:0}
+  .tl-item .tl-right{padding-left:0}
+  .tl-item::after{left:24px;transform:none}
+}
+@media(max-width:600px){
+  .feat-grid,.testi-grid,.coaches-mini{grid-template-columns:1fr}
+  h2.title{font-size:22px}
+  .ps-strip{flex-direction:column;text-align:center}
+  .hero h1{font-size:26px}
+  .fixed-enquire{display:none}
+  .go-top{right:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- FIXED ENQUIRE -->
+<a class="fixed-enquire" href="http://cricket.adamasunitedsports.com/enquire" target="_blank" rel="noopener">ENQUIRE NOW!</a>
+
+<!-- TOP BAR -->
+<div class="topbar">Only <strong>25 Residential Seats Available</strong> &nbsp;|&nbsp; Apply Before Seats Fill</div>
+
+<!-- NAV -->
+<nav class="nav" id="topNav">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <img src="logo.jpg" alt="Adamas Cricket Academy">
+    </a>
+    <div class="nav-title">Best Cricket Academy in Kolkata</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">&#9679; Trials Ongoing</div>
+      <h1>India's next<br><span>cricket stars</span><br>start here</h1>
+      <a href="#contact" class="hero-cta-pill">Turn Your Child's Cricket Dream Into Reality</a>
+      <p class="hero-desc">At Adamas Cricket Academy, young cricketers get elite coaching, full academic support, and a clear pathway — all under one roof. Coached by ex-first-class cricketers under Saurashish Lahiri.</p>
+      <div class="hero-facts">
+        <strong>Integrated Academics + Cricket</strong> — No Compromises<br>
+        District &rarr; State &rarr; National pathway built into the programme
+      </div>
+      <p class="hero-urgency">&#9679; Only 25 residential seats. Trials Ongoing! Apply Now.</p>
+    </div>
+    <div class="hero-form" id="contact">
+      <h3>Ready to Begin?</h3>
+      <p style="font-size:14px;color:#555;text-align:center;margin-bottom:20px;line-height:1.65">Complete your application on our portal. Our coordinator will call you within 24 hours.</p>
+      <a href="http://cricket.adamasunitedsports.com/enquire" target="_blank" rel="noopener" class="hf-submit" style="display:block;text-align:center;margin-bottom:14px">Apply Now →</a>
+      <p class="hf-note">Seats are limited. Apply early to secure your trial slot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">7+</div><div class="stat-l">Expert Coaches</div></div>
+    <div class="stat"><div class="stat-n">3</div><div class="stat-l">World-Class Grounds</div></div>
+    <div class="stat"><div class="stat-n">10</div><div class="stat-l">Scholarships / Year</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Campus Life Managed</div></div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section class="section tl-section" id="schedule">
+  <div class="tl-bg"></div>
+  <div class="tl-content">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="title wh">A Day in the Life of an Adamas Cricketer</h2>
+        <p class="sub" style="color:rgba(255,255,255,.5)">Structure is the foundation of excellence. Here's how every day is built for maximum growth</p>
+        <hr class="hr-div" style="border-color:var(--orange)">
+      </div>
+      <div class="tl-track">
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-time">05:30 AM</div>
+            <div class="tl-head">Morning Training</div>
+            <div class="tl-desc">Fitness drills, strength &amp; conditioning, warm-up routines</div>
+          </div>
+          <div class="tl-right"></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left"></div>
+          <div class="tl-right">
+            <div class="tl-time">09:00 AM</div>
+            <div class="tl-head">Academic Sessions</div>
+            <div class="tl-desc">School/university classes on campus — never missing a lesson</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-time">04:00 PM</div>
+            <div class="tl-head">Cricket Training</div>
+            <div class="tl-desc">Skill work, match simulations, net sessions, video review</div>
+          </div>
+          <div class="tl-right"></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left"></div>
+          <div class="tl-right">
+            <div class="tl-time">08:00 PM</div>
+            <div class="tl-head">Recovery &amp; Rest</div>
+            <div class="tl-desc">Physiotherapy check-in, team dinner, recovery routine, lights out</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-cta">365 days of structured excellence that sets Adamas players apart — <a href="#contact">Join Now</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION -->
+<section class="section ps-section">
+  <div class="wrap">
+    <div class="ps-grid">
+      <div class="ps-bad">
+        <h3>Every Cricket Parent Knows This Feeling</h3>
+        <ul>
+          <li><span class="x">&#10007;</span> Your child has talent — but no structured coaching</li>
+          <li><span class="x">&#10007;</span> Practice sessions are scattered and not match-focused</li>
+          <li><span class="x">&#10007;</span> Balancing school studies and cricket is a constant struggle</li>
+          <li><span class="x">&#10007;</span> No clear pathway to district, state, or national teams</li>
+          <li><span class="x">&#10007;</span> Training at a local academy, but seeing no real progress</li>
+        </ul>
+      </div>
+      <div class="ps-good">
+        <h3>Adamas Cricket Academy Changes All of That</h3>
+        <ul>
+          <li><span class="ck">&#10003;</span> Elite, structured coaching by ex-first-class cricketers</li>
+          <li><span class="ck">&#10003;</span> Match simulations and daily performance tracking</li>
+          <li><span class="ck">&#10003;</span> Academics integrated on the same campus — zero compromise</li>
+          <li><span class="ck">&#10003;</span> CAB League, state trials, national tours — built into the path</li>
+          <li><span class="ck">&#10003;</span> Progress is measured, visible, and celebrated every week</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ps-strip">
+      <p>Built for serious players. Designed to create professionals. Limited spots — <a href="#contact">Book Your Trial Now</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 REASONS -->
+<section class="section reasons">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title">6 Reasons Champions Choose Adamas</h2>
+      <p class="sub">Every element of our programme is engineered to move your child one step closer to professional cricket.</p>
+      <hr class="hr-div">
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🎓</div>
+        <div class="feat-title">Integrated Academics + Cricket</div>
+        <div class="feat-desc">One campus, no compromise. Your child studies and trains in the same environment — managed end to end.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🏏</div>
+        <div class="feat-title">Coached by Ex-First-Class Cricketers</div>
+        <div class="feat-desc">Saurashish Lahiri and a team of proven professionals bring real match experience to every session.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📊</div>
+        <div class="feat-title">Daily Performance Tracking</div>
+        <div class="feat-desc">Video analysis, skill assessments, and coaching reports so you always know exactly how your child is progressing.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💪</div>
+        <div class="feat-title">Sports Science &amp; Injury Prevention</div>
+        <div class="feat-desc">Strength &amp; conditioning, physiotherapy, and recovery are built into the daily routine — building athletes, not just cricketers.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🗺️</div>
+        <div class="feat-title">Clear Competitive Pathway</div>
+        <div class="feat-desc">From grassroots to district, state, national, and international — the pathway is structured, not left to chance.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🏠</div>
+        <div class="feat-title">Safe, Disciplined Residential Life</div>
+        <div class="feat-desc">Fully managed hostel. Nutritious meals. Structured routine. Parents can relax — their child is in safe hands.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="#contact" class="btn-or">Enquire Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- COACHES -->
+<section class="section coaches" id="coaches">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title">Learn From The Best In The Business</h2>
+      <p class="sub">Our coaches are not just teachers — they are former players who have lived the journey your child is about to start.</p>
+      <hr class="hr-div">
+    </div>
+    <div class="coach-main">
+      <div class="coach-video-wrap">
+        <iframe src="https://www.youtube.com/embed/i0vyyF3UXsg" title="Meet Saurashish Lahiri" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+      <div class="coach-info">
+        <div class="coach-name">Saurashish Lahiri</div>
+        <div class="coach-role">Technical Director &amp; Mentor</div>
+        <p>A decorated cricketer and mentor who has shaped players at the highest levels of Bengal cricket. Under his vision, Adamas Academy has been designed to replicate the environment of professional cricket — discipline, science, and skill in equal measure.</p>
+        <p>His coaching philosophy: talent is the starting point. Structure, daily feedback, and match exposure are what convert raw talent into a career in professional cricket.</p>
+        <a href="#contact" class="btn-or">Train Under Saurashish &rarr;</a>
+      </div>
+    </div>
+    <div class="coaches-mini">
+      <div class="coach-card">
+        <div class="coach-avi">🏏</div>
+        <div class="coach-cn">Arindam Ghosh</div>
+        <div class="coach-cr">Batting Coach</div>
+        <div class="coach-cd">Former Bengal U-23 cricketer. Specialist in technical batting correction, footwork, and temperament for long innings.</div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-avi">⚡</div>
+        <div class="coach-cn">Subhajit Das</div>
+        <div class="coach-cr">Bowling Coach — Pace</div>
+        <div class="coach-cd">Ex-district fast bowler. Expert in seam mechanics, pace rhythm, and building match-winning bowling aggression.</div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-avi">🌀</div>
+        <div class="coach-cn">Prosenjit Bose</div>
+        <div class="coach-cr">Bowling Coach — Spin</div>
+        <div class="coach-cd">State-level off-spinner. 14 years developing spin bowling across West Bengal. Expert in flight, turn and variation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testi-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title">Don't Take Our Word For It</h2>
+      <p class="sub">Hear from the players and parents who have seen the transformation first-hand.</p>
+      <hr class="hr-div">
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="testi-qm">&ldquo;</div>
+        <p>The coaches here played at the highest levels. They teach you things no YouTube video can — how to think under pressure, how to read the game. It's next level.</p>
+        <div class="testi-foot">
+          <div class="testi-avi">⚡</div>
+          <div>
+            <div class="testi-name"><span class="testi-badge">Age 17</span> Rohit Mitra</div>
+            <div class="testi-meta">Fast Bowler &middot; Hooghly</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-qm">&ldquo;</div>
+        <p>I came here as a club cricketer with no clear path. Within 8 months, I was playing for my district. The coaching, the structure — nothing like I'd experienced before.</p>
+        <div class="testi-foot">
+          <div class="testi-avi">🏏</div>
+          <div>
+            <div class="testi-name"><span class="testi-badge">Age 16</span> Arjun Bose</div>
+            <div class="testi-meta">Batsman &middot; North 24 Parganas</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-qm">&ldquo;</div>
+        <p>As a parent, my biggest concern was my son's academics. At Adamas, his school performance actually improved because of the discipline. The team manages everything.</p>
+        <div class="testi-foot">
+          <div class="testi-avi">👩</div>
+          <div>
+            <div class="testi-name">Mrs. Priya Chatterjee</div>
+            <div class="testi-meta">Parent of a Residential Player &middot; Kolkata</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="fees-section" id="fees">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title wh">Everything Your Child Needs — Under One Fee</h2>
+      <p class="sub" style="color:rgba(255,255,255,.5)">No hidden charges. No extra coaching fees. One all-inclusive investment in your child's future.</p>
+      <hr class="hr-div" style="border-color:var(--orange)">
+    </div>
+    <div class="fee-card">
+      <div class="fee-left">
+        <div class="fee-h">Annual Programme Fee <span>&#8377;1,20,000 / year</span> = Less than <span>&#8377;330 per day</span></div>
+        <ul class="fee-items">
+          <li><span class="ck">&#10003;</span> Elite cricket coaching (daily)</li>
+          <li><span class="ck">&#10003;</span> Strength, conditioning &amp; physiotherapy</li>
+          <li><span class="ck">&#10003;</span> Academic education on campus</li>
+          <li><span class="ck">&#10003;</span> Fully managed hostel accommodation</li>
+          <li><span class="ck">&#10003;</span> All meals (performance diet)</li>
+          <li><span class="ck">&#10003;</span> Tournament entries &amp; match exposure</li>
+          <li><span class="ck">&#10003;</span> Kit, equipment &amp; facilities access</li>
+          <li><span class="ck">&#10003;</span> Weekly video analysis &amp; parent reports</li>
+        </ul>
+        <div class="fee-admission">+ One-Time Admission Fee: <strong>&#8377;35,000</strong></div>
+      </div>
+      <div class="fee-right">
+        <h3>&#127942; Up to 10 Scholarships Available</h3>
+        <p class="fi">We support high-potential players financially. Scholarships assessed during trial — raw talent qualifies too.</p>
+        <div class="sch-head">Who qualifies:</div>
+        <ul class="sch-list">
+          <li><span class="ck">&#10003;</span> Players with district or state match performance</li>
+          <li><span class="ck">&#10003;</span> Strong trial assessment by our coaching panel</li>
+          <li><span class="ck">&#10003;</span> Exceptional raw talent identified by our coaches</li>
+        </ul>
+        <div class="sch-head">What you get:</div>
+        <ul class="sch-list">
+          <li><span class="ck">&#10003;</span> Partial fee support</li>
+          <li><span class="ck">&#10003;</span> Full coaching fee waiver for exceptional talent</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fee-actions">
+      <a href="#contact" class="btn-or">Apply For Scholarship</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title">Questions Parents Ask Us Every Day</h2>
+      <hr class="hr-div">
+    </div>
+    <div class="faq">
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">Is my child too young or too old to join? <span class="faq-ico">&#8964;</span></button>
+        <div class="faq-a">We welcome players aged 10–19. Our coaches assess each player individually during trials. It's never too early or too late to start structured coaching — what matters is commitment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will academics suffer if my child joins? <span class="faq-ico">&#8964;</span></button>
+        <div class="faq-a">No. Academic classes are scheduled on campus every day. Most of our cricketers improve their grades because of the discipline and time management the programme instils.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How are scholarships awarded? Does my child need to be at a certain level? <span class="faq-ico">&#8964;</span></button>
+        <div class="faq-a">Scholarships are assessed during the trial. Even early-stage players with exceptional raw talent qualify. Contact us and we will guide you through the scholarship trial process — no prior level is required to apply.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can we visit the campus before deciding? <span class="faq-ico">&#8964;</span></button>
+        <div class="faq-a">Absolutely. Contact us and our admissions team will arrange a campus visit and a complimentary trial session — so your child can experience the environment before any commitment is made.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What happens after I fill the form? <span class="faq-ico">&#8964;</span></button>
+        <div class="faq-a">Our coordinator calls within 24 hours. They'll understand your child's background, answer every question, and schedule a trial if there's a good fit. No pressure, no sales pitch — just an honest conversation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2026 Adamas United Sports Pvt. Ltd.</p>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <span>|</span>
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <span>|</span>
+    <a href="refund-policy.html">Refund Policy</a>
+    <span>|</span>
+    <a href="cancellation-policy.html">Cancellation Policy</a>
+    <span>|</span>
+    <a href="grievance-policy.html">Grievance Policy</a>
+    <span>|</span>
+    <a href="childrens-policy.html">Children's Privacy</a>
+  </div>
+</footer>
+
+<button class="go-top" id="goTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<script>
+window.addEventListener('scroll',function(){
+  document.getElementById('goTop').classList.toggle('on',window.scrollY>400);
+});
+function toggleFaq(btn){
+  var item=btn.parentElement;
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!wasOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
